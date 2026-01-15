@@ -1,5 +1,9 @@
 # Week 1 — Foundations (Notes)
 
+## Table of contents
+- [Day 1 - Yahoo login page](#day-1---yahoo-login-page)
+  - [What I learned](what-i-learned)
+  - [Validation observation (Yahoo)](validation-observation-yahoo)
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 ### What I learned
 - Write from an outside perspective (“User is redirected…”, not “I…”)  
