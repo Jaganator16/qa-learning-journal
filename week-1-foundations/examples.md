@@ -1,5 +1,12 @@
 # Week 1 — Examples
 
+## Table of contents
+- [Day 1 — Yahoo login page](#day-1---yahoo-login-page)
+  - [Test ideas (v1 — my first draft)](#test-ideas-v1--my-first-draft)
+  - [Test ideas (v2 — refined with AI feedback)](#test-ideas-v2--refined-with-ai-feedback)
+  - [Executed tests](#executed-tests)
+  - [Bug report](#bug-report)
+  
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
 ### Test ideas (v1 — my first draft)
