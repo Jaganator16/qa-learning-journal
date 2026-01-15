@@ -1,9 +1,8 @@
-# Week 1 — Examples (Yahoo login/sign-up)
+# Week 1 — Examples
 
-Target:
-- https://login.yahoo.com/ (UK / en-GB)
+## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
-## Test ideas (v1 — my first draft)
+### Test ideas (v1 — my first draft)
 
 Positive tests:
 
@@ -40,9 +39,9 @@ Test 10: Create a new account with already used credentials
 Expected: After entering details and clicking create account, red text appears above the create account button and the username box saying "Account already in use" with a button for sign in and possibly forgotten password appearing
 
 
-## Test ideas (v2 — refined with AI feedback)
+### Test ideas (v2 — refined with AI feedback)
 
-### Positive
+#### Positive
 1. Sign in with valid username + valid password  
    Expected: User is authenticated and redirected to Yahoo Mail (or the configured destination page).
 
@@ -63,7 +62,7 @@ Expected: After entering details and clicking create account, red text appears a
    Steps: Sign in with “Stay signed in” unchecked → close browser → reopen → go to Yahoo Mail.  
    Expected: User is prompted to sign in again (no automatic authentication).
 
-### Negative
+#### Negative
 7. Click Next with empty username/email  
    Expected: Validation shown and user does not proceed to password step.
 
@@ -76,26 +75,26 @@ Expected: After entering details and clicking create account, red text appears a
 10. Create account with already-used identifier (on sign-up page)  
     Expected: Inline error indicates identifier is already in use; user cannot complete registration.
 
-## Executed tests
+### Executed tests
 Environment:
 - Desktop: Chrome, macOS Sequoia 15.5, VPN ON, adblockers ON
 
 Constraint:
 - Account creation blocked during phone verification on desktop, so tests requiring an existing account could not be executed.
 
-### Test: Forgotten username link works
+#### Test: Forgotten username link works
 Result: PASS  
 Notes: Navigates to account recovery page (“Let’s find your account”), prompts for recovery email.
 
-### Test: Click Next with empty username/email
+#### Test: Click Next with empty username/email
 Result: PASS (behaviour observed)  
 Notes: Message shown: “Sorry, we don’t recognise this email address.”
 
-### Test: Enter invalid username/email format (e.g., `john@`)
+#### Test: Enter invalid username/email format (e.g., `john@`)
 Result: PASS (behaviour observed)  
 Notes: Message shown: “Sorry, we don’t recognise this email address.”
 
-## Bug report
+### Bug report
 Title: Account creation fails at phone verification on desktop; iOS proceeds but SMS not received
 
 Steps:
