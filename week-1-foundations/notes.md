@@ -1,5 +1,6 @@
 # Week 1 — Foundations (Notes)
 
+## Day 1 [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 ## What I learned
 - Write from an outside perspective (“User is redirected…”, not “I…”)  
 - Include steps when needed (especially for anything involving sessions like “Stay signed in”)  
