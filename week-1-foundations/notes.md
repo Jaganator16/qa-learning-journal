@@ -19,3 +19,22 @@
 - Expected would usually differ:
   - Empty: “Enter your email/username”
   - Invalid format: “Enter a valid email address”
+
+# Week 1 — Foundations (Notes)
+
+## Today’s learnings
+
+1. **Be precise about observable outcomes**  
+   Tests should avoid vague destinations such as “next page” or “home page”. Outcomes are stronger when they are anchored to observable states, such as a visible signed-in indicator, an error message being shown, or the page not changing.
+
+2. **Avoid ambiguous wording such as “works” or “step”**  
+   Terms like “button works” or “remains on step” do not clearly describe behaviour. Clear tests state exactly what action occurs and what does not occur.
+
+3. **Match expected results to actual system behaviour**  
+   Expected results should reflect what the system does, not an assumed validation message or mechanism. Correct behaviour can still be mismatched with an inaccurate expectation.
+
+4. **Separate test idea quality from execution quality**  
+   Test execution can be correct even when test wording needs improvement. Writing clear, neutral, testable cases is a distinct skill from running the tests themselves.
+
+5. **Small wording changes can significantly improve test strength**  
+   Minor adjustments—removing ambiguity, tightening scope, or clarifying outcomes—can materially improve test quality without requiring a full rewrite.
