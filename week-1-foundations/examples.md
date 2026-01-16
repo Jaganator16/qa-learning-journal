@@ -1,11 +1,16 @@
 # Week 1 — Examples
 
 ## Table of contents
-- [Day 1 — Yahoo login page](#day-1---yahoo-login-page)
+- [Day 1 — Yahoo login page](#day-1--yahoo-login-page)
   - [Test ideas (v1 — my first draft)](#test-ideas-v1--my-first-draft)
   - [Test ideas (v2 — refined with AI feedback)](#test-ideas-v2--refined-with-ai-feedback)
   - [Executed tests](#executed-tests)
   - [Bug report](#bug-report)
+- [Lidl login page](#lidl-login-page)
+  - [Test ideas](#test-ideas)
+  - [Executed tests](#executed-tests-1)
+  - [Bugs](#bugs)
+  - [Items that need rewriting](#items-that-need-rewriting)
   
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
@@ -129,3 +134,167 @@ Additional info:
 Evidence:
 - Screenshots: `week-1-foundations/screenshots/yahoo-signup-error-chrome.png` & `week-1-foundations/screenshots/yahoo-signup-error-edge.png`
 - URL contained `/account/challenge/fail`
+
+# Week 1 — Examples
+
+## Lidl login page
+
+URL:  
+https://accounts.lidl.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fcountry_code%3DGB%26response_type%3Dcode%26client_id%3Dgreatbritainretailclient%26scope%3Dopenid%2520profile%2520Lidl.Authentication%2520offline_access%26state%3DFFVZM63x2SMloHHWpLTH0hxg8kFHXuKfuiDHuDS0Kvs%253D%26redirect_uri%3Dhttps%253A%252F%252Fwww.lidl.co.uk%252Fuser-api%252Fsignin-oidc%26nonce%3DdhYeqjREegv9rzcMhR_EF64LIS9rqTibZJ_lf3RRJSA%26step%3Dlogin%26language%3Den-GB#login
+
+---
+
+## Test ideas
+
+### Positive
+
+1. **Test:** Enter valid username and password  
+   **Expected:** User is authenticated and taken to Lidl home page
+
+2. **Test:** Log in with your phone number button works  
+   **Expected:** User is taken to a phone number log in page
+
+3. **Test:** "Forgot password" link works  
+   **Expected:** User is taken to a password recovery page where an email or phone number is required
+
+4. **Test:** Register link works  
+   **Expected:** User is taken to an account creation page
+
+5. **Test:** Show your password button works  
+   **Expected:** When clicked, password is toggled from readable to hidden
+
+### Negative
+
+1. **Test:** Click log in with empty username  
+   **Expected:** Validation is shown and the user is not taken to the next page
+
+2. **Test:** Invalid username/format  
+   **Expected:** Validation is shown and the user is not taken to the next step
+
+3. **Test:** Incorrect password is entered  
+   **Expected:** Account is not authenticated, error message displays, user remains on step
+
+4. **Test:** Register with credentials already associated with an account  
+   **Expected:** Validation shows username is already in use, user does not proceed
+
+---
+
+## Executed tests
+
+### Test: Incorrect password is entered
+**Steps:** Enter valid email, enter incorrect password  
+**Expected:** Account is not authenticated, error message displays, user remains on step  
+**Result:** PASS — User does not proceed. Validation reads:  
+> “Invalid email or password incorrect. Try again or select ‘Forgot your password?’”
+
+---
+
+### Test: Register with credentials already associated with an account
+**Steps:** Click Register, enter email address, enter password, click Next  
+**Expected:** Validation shows username is already in use, user does not proceed  
+**Result:** PASS — User is taken to a page that says:
+
+> This email is already registered to a Lidl Plus account  
+> Please log in, or if you haven’t already registered with jagobouffler@gmail.com, please contact Customer Care.
+
+Buttons shown:
+- Log in
+- Contact Customer Care
+
+---
+
+### Test: Log in with your phone number button works
+**Steps:** Click the Log in with your phone number button  
+**Expected:** User is taken to a phone number log in page  
+**Result:** PASS — User is taken to a page where they enter their phone number, then their password
+
+---
+
+## Bugs
+No bugs to report.
+
+---
+
+## Items that need rewriting
+
+### Positive 1
+
+**Rewritten test:** Log in with valid email/username and password  
+**Expected:** User is authenticated and a signed-in state is visible (e.g., account page loads or user menu shows the user is signed in).  
+
+**Why:**  
+“Taken to Lidl home page” may not be the actual redirect target; using an observable signed-in indicator makes it testable across different return URLs.
+
+---
+
+### Positive 3
+
+**Rewritten test:** “Forgot your password?” link navigates to password recovery  
+**Expected:** User is taken to a password recovery page where they can start reset using an email address or phone number (as offered).  
+
+**Why:**  
+Clarifies observable destination and avoids over-specifying exactly what’s required if the page options vary.
+
+---
+
+### Positive 5
+
+**Rewritten test:** “Show password” control toggles password visibility  
+**Expected:** Clicking toggles the password field between masked and visible, and the control state changes accordingly (e.g., icon/label).  
+
+**Why:**  
+Current expected outcome is reversed (“toggled from readable to hidden”); also adding a visible indicator makes it clearly observable.
+
+---
+
+### Negative 1
+
+**Rewritten test:** Attempt login with empty username/email and any password state  
+**Expected:** Inline validation is shown for the username/email field and login does not proceed (user remains on the login page).  
+
+**Why:**  
+“Click log in with empty username” is vague; specifying the observable validation and that navigation does not occur improves testability.
+
+---
+
+### Negative 2
+
+**Rewritten test:** Enter an invalid email/username format and attempt login  
+**Expected:** Format validation is shown (if supported) and login does not proceed.  
+
+**Why:**  
+“Invalid username/format” is unclear; making it explicitly about format and observable validation improves clarity.
+
+---
+
+### Negative 3
+
+**Rewritten test:** Attempt login with valid email/username and incorrect password  
+**Expected:** Authentication fails, an error message is displayed, and user remains on the login page.  
+
+**Why:**  
+“User remains on step” is ambiguous; “remains on the login page” is observable.
+
+---
+
+### Negative 4
+
+**Rewritten test:** Attempt to register with an email already associated with an account  
+**Expected:** User is prevented from completing registration and is shown a clear message that the email is already registered, with a path to log in or contact support (if offered).  
+
+**Why:**  
+“Validation shows username is already in use” may not match the actual message (email-based); this keeps it accurate and observable.
+
+---
+
+### Executed test wording tweak
+
+**Executed:** Incorrect password is entered  
+
+**Rewritten result statement (optional clarity only):**  
+PASS — Login did not proceed; error message displayed and user remained on the login page.
+
+**Why:**  
+Replaces “not taken to next page” with an observable state.
+
+Everything else looks clear and testable, and no new tests were added since nothing critical is missing for this set.
