@@ -4,6 +4,9 @@
 - [Day 1 - Yahoo login page](#day-1---yahoo-login-page)
   - [What I learned](#what-i-learned)
   - [Validation observation (Yahoo)](#validation-observation-yahoo)
+- [Day 2 - Lidl login page](#day-2---lidl-login-page)
+  - [What I learned](#what-i-learned)
+  
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 ### What I learned
 - Write from an outside perspective (“User is redirected…”, not “I…”)  
@@ -20,9 +23,9 @@
   - Empty: “Enter your email/username”
   - Invalid format: “Enter a valid email address”
 
-# Week 1 — Foundations (Notes)
+## Day 2 - [Lidl login page](https://accounts.lidl.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fcountry_code%3DGB%26response_type%3Dcode%26client_id%3Dgreatbritainretailclient%26scope%3Dopenid%2520profile%2520Lidl.Authentication%2520offline_access%26state%3DFFVZM63x2SMloHHWpLTH0hxg8kFHXuKfuiDHuDS0Kvs%253D%26redirect_uri%3Dhttps%253A%252F%252Fwww.lidl.co.uk%252Fuser-api%252Fsignin-oidc%26nonce%3DdhYeqjREegv9rzcMhR_EF64LIS9rqTibZJ_lf3RRJSA%26step%3Dlogin%26language%3Den-GB#login)
 
-## Today’s learnings
+## What I learned
 
 1. **Be precise about observable outcomes**  
    Tests should avoid vague destinations such as “next page” or “home page”. Outcomes are stronger when they are anchored to observable states, such as a visible signed-in indicator, an error message being shown, or the page not changing.
