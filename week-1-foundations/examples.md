@@ -6,7 +6,7 @@
   - [Test ideas (v2 — refined with AI feedback)](#test-ideas-v2--refined-with-ai-feedback)
   - [Executed tests](#executed-tests)
   - [Bug report](#bug-report)
-- [Day 2 - Lidl login page](#day---2-lidl-login-page)
+- [Day 2 - Lidl login page](#day-2---lidl-login-page)
   - [Test ideas](#test-ideas)
   - [Executed tests](#executed-tests-1)
   - [Bugs](#bugs)
