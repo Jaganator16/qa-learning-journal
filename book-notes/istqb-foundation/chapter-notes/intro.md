@@ -15,12 +15,12 @@ This gave me a clearer structure for how I’ll work with the material, rather t
 
 ## Chapter length and estimated reading time
 
-1. Pages 6–36 — ~2h 35m  
-2. Pages 37–59 — ~1h 55m  
-3. Pages 60–76 — ~1h  
-4. Pages 77–138 — ~4h 45m  
-5. Pages 139–174 — ~2h 50m  
-6. Pages 175–222 — ~1h 20m  
+1. Pages 6–36 — 2h 35m  
+2. Pages 37–59 — 1h 55m  
+3. Pages 60–76 — 1h  
+4. Pages 77–138 — 4h 45m  
+5. Pages 139–174 — 2h 50m  
+6. Pages 175–222 — 1h 20m  
 7. Pages 223–228
 
 ## Chapter overview (intro skim)
