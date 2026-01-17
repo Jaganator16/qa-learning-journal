@@ -22,7 +22,11 @@
 
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
-### My tests for Yahoo
+---
+
+## My tests for Yahoo
+
+---
 
 ### Test ideas (v1 — my first draft)
 
@@ -60,7 +64,11 @@ Expected: The password box to be cleared with a message appearing above in red s
 Test 10: Create a new account with already used credentials  
 Expected: After entering details and clicking create account, red text appears above the create account button and the username box saying "Account already in use" with a button for sign in and possibly forgotten password appearing
 
-### Reviewed tests for Yahoo (rewritten / reviewed by AI)
+---
+
+## Reviewed tests for Yahoo (rewritten / reviewed by AI)
+
+---
 
 ### Test ideas (v2 — refined with AI feedback)
 
@@ -98,7 +106,11 @@ Expected: After entering details and clicking create account, red text appears a
 10. Create account with already-used identifier (on sign-up page)  
     Expected: Inline error indicates identifier is already in use; user cannot complete registration.
 
-### Executed tests for Yahoo
+---
+
+## Executed tests for Yahoo
+
+---
 
 ### Executed tests
 Environment:
@@ -119,11 +131,19 @@ Notes: Message shown: “Sorry, we don’t recognise this email address.”
 Result: PASS (behaviour observed)  
 Notes: Message shown: “Sorry, we don’t recognise this email address.”
 
-### Reviewed tests for Yahoo
+---
+
+## Reviewed tests for Yahoo
+
+---
 
 No reviewed tests.
 
-### Bug report for Yahoo
+---
+
+## Bug report for Yahoo
+
+---
 
 ### Bug report
 Title: Account creation fails at phone verification on desktop; iOS proceeds but SMS not received
@@ -156,7 +176,9 @@ Evidence:
 
 ## Day 2 - [Lidl login page](https://accounts.lidl.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fcountry_code%3DGB%26response_type%3Dcode%26client_id%3Dgreatbritainretailclient%26scope%3Dopenid%2520profile%2520Lidl.Authentication%2520offline_access%26state%3DFFVZM63x2SMloHHWpLTH0hxg8kFHXuKfuiDHuDS0Kvs%253D%26redirect_uri%3Dhttps%253A%252F%252Fwww.lidl.co.uk%252Fuser-api%252Fsignin-oidc%26nonce%3DdhYeqjREegv9rzcMhR_EF64LIS9rqTibZJ_lf3RRJSA%26step%3Dlogin%26language%3Den-GB#login)
 
-### My tests for Lidl
+---
+
+## My tests for Lidl
 
 ---
 
@@ -193,7 +215,9 @@ Evidence:
 4. **Test:** Register with credentials already associated with an account  
    **Expected:** Validation shows username is already in use, user does not proceed
 
-### Reviewed tests for Lidl (rewritten / reviewed by AI)
+---
+
+## Reviewed tests for Lidl (rewritten / reviewed by AI)
 
 ---
 
@@ -281,7 +305,9 @@ Replaces “not taken to next page” with an observable state.
 
 Everything else looks clear and testable, and no new tests were added since nothing critical is missing for this set.
 
-### Executed tests for Lidl
+---
+
+## Executed tests for Lidl
 
 ---
 
@@ -314,17 +340,27 @@ Buttons shown:
 **Expected:** User is taken to a phone number log in page  
 **Result:** PASS — User is taken to a page where they enter their phone number, then their password
 
-### Reviewed tests for Lidl
+---
+
+## Reviewed tests for Lidl
+
+---
 
 No reviewed tests.
 
-### Bug report for Lidl
+---
+
+## Bug report for Lidl
+
+---
 
 No bugs to report.
 
 ## Day 3 — [Thomann contact page](https://www.thomann.co.uk/compinfo_contact.html)
 
-### My tests for Thomann
+---
+
+## My tests for Thomann
 
 ---
 
@@ -368,7 +404,9 @@ No bugs to report.
 3. **Test:** Enter an invalid customer number in the arrange a return call section  
    **Expected:** Format validation is shown and the user cannot proceed.
 
-### Reviewed tests for Thomann (rewritten / reviewed by AI)
+---
+
+## Reviewed tests for Thomann (rewritten / reviewed by AI)
 
 ---
 
@@ -419,7 +457,9 @@ No bugs to report.
 3. **Enter an invalid customer number in the arrange a return call section — Acceptable**  
    **Expected:** Format validation is shown and the user cannot proceed.
 
-### Executed tests for Thomann
+---
+
+## Executed tests for Thomann
 
 ---
 
@@ -440,7 +480,9 @@ No bugs to report.
 **Expected:** When the user refreshes the page, any accordion sections that were closed are open again.  
 **Result:** PASS
 
-### Reviewed tests for Thomann
+---
+
+## Reviewed tests for Thomann
 
 ---
 
@@ -457,6 +499,10 @@ Change the user’s system time settings, return to the page, and refresh.
 **Why:**  
 The test intent is to verify that the sign does not rely on the user’s system time. Matching the opening hours risks contradicting that intent and makes the test harder to reason about.
 
-### Bug report for Thomann
+---
+
+## Bug report for Thomann
+
+---
 
 No bugs to report.
