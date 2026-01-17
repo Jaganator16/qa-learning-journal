@@ -486,8 +486,6 @@ No bugs to report.
 
 ---
 
-## Review: step rewrite rationale
-
 ### Test: State of Open/Closed sign after changing system time settings — Needs change
 
 **Issue:**  
