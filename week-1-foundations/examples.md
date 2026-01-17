@@ -414,6 +414,11 @@ Everything else looks clear and testable, and no new tests were added since noth
 
 ---
 
+## Bugs
+No bugs to report.
+
+---
+
 ## Review: step rewrite rationale
 
 ### Test: State of Open/Closed sign after changing system time settings — Needs change
