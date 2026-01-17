@@ -2,22 +2,24 @@
 
 ## Table of contents
 - [Day 1 — Yahoo login page](#day-1--yahoo-login-page)
-  - [Test ideas (v1 — my first draft)](#test-ideas-v1--my-first-draft)
-  - [Test ideas (v2 — refined with AI feedback)](#test-ideas-v2--refined-with-ai-feedback)
-  - [Executed tests](#executed-tests)
-  - [Bug report](#bug-report)
-- [Day 2 - Lidl login page](#day-2---lidl-login-page)
-  - [Test ideas](#test-ideas)
-  - [Executed tests](#executed-tests-1)
-  - [Bugs](#bugs)
-  - [Items that need rewriting](#items-that-need-rewriting)
+  - [My tests for Yahoo](#my-tests-for-yahoo)
+  - [Reviewed tests for Yahoo (rewritten / reviewed by AI)](#reviewed-tests-for-yahoo-rewritten--reviewed-by-ai)
+  - [Executed tests for Yahoo](#executed-tests-for-yahoo)
+  - [Bug report for Yahoo](#bug-report-for-yahoo)
+- [Day 2 — Lidl login page](#day-2--lidl-login-page)
+  - [My tests for Lidl](#my-tests-for-lidl)
+  - [Reviewed tests for Lidl (rewritten / reviewed by AI)](#reviewed-tests-for-lidl-rewritten--reviewed-by-ai)
+  - [Executed tests for Lidl](#executed-tests-for-lidl)
+  - [Bug report for Lidl](#bug-report-for-lidl)
 - [Day 3 — Thomann contact page](#day-3--thomann-contact-page)
-  - [Test ideas](#test-ideas-2)
-  - [Review notes (rewritten / reviewed by AI)](#review-notes-rewritten--reviewed-by-ai)
-  - [Executed tests](#executed-tests-2)
-  - [Review: step rewrite rationale](#review-step-rewrite-rationale)  
-  
+  - [My tests for Thomann](#my-tests-for-thomann)
+  - [Reviewed tests for Thomann (rewritten / reviewed by AI)](#reviewed-tests-for-thomann-rewritten--reviewed-by-ai)
+  - [Executed tests for Thomann](#executed-tests-for-thomann)
+  - [Bug report for Thomann](#bug-report-for-thomann)
+
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
+
+### My tests for Yahoo
 
 ### Test ideas (v1 — my first draft)
 
@@ -56,6 +58,8 @@ Test 10: Create a new account with already used credentials
 Expected: After entering details and clicking create account, red text appears above the create account button and the username box saying "Account already in use" with a button for sign in and possibly forgotten password appearing
 
 
+### Reviewed tests for Yahoo (rewritten / reviewed by AI)
+
 ### Test ideas (v2 — refined with AI feedback)
 
 #### Positive
@@ -92,6 +96,8 @@ Expected: After entering details and clicking create account, red text appears a
 10. Create account with already-used identifier (on sign-up page)  
     Expected: Inline error indicates identifier is already in use; user cannot complete registration.
 
+### Executed tests for Yahoo
+
 ### Executed tests
 Environment:
 - Desktop: Chrome, macOS Sequoia 15.5, VPN ON, adblockers ON
@@ -110,6 +116,8 @@ Notes: Message shown: “Sorry, we don’t recognise this email address.”
 #### Test: Enter invalid username/email format (e.g., `john@`)
 Result: PASS (behaviour observed)  
 Notes: Message shown: “Sorry, we don’t recognise this email address.”
+
+### Bug report for Yahoo
 
 ### Bug report
 Title: Account creation fails at phone verification on desktop; iOS proceeds but SMS not received
@@ -142,6 +150,7 @@ Evidence:
 
 ## Day 2 - [Lidl login page](https://accounts.lidl.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fcountry_code%3DGB%26response_type%3Dcode%26client_id%3Dgreatbritainretailclient%26scope%3Dopenid%2520profile%2520Lidl.Authentication%2520offline_access%26state%3DFFVZM63x2SMloHHWpLTH0hxg8kFHXuKfuiDHuDS0Kvs%253D%26redirect_uri%3Dhttps%253A%252F%252Fwww.lidl.co.uk%252Fuser-api%252Fsignin-oidc%26nonce%3DdhYeqjREegv9rzcMhR_EF64LIS9rqTibZJ_lf3RRJSA%26step%3Dlogin%26language%3Den-GB#login)
 
+### My tests for Lidl
 
 ---
 
@@ -178,41 +187,7 @@ Evidence:
 4. **Test:** Register with credentials already associated with an account  
    **Expected:** Validation shows username is already in use, user does not proceed
 
----
-
-## Executed tests
-
-### Test: Incorrect password is entered
-**Steps:** Enter valid email, enter incorrect password  
-**Expected:** Account is not authenticated, error message displays, user remains on step  
-**Result:** PASS — User does not proceed. Validation reads:  
-> “Invalid email or password incorrect. Try again or select ‘Forgot your password?’”
-
----
-
-### Test: Register with credentials already associated with an account
-**Steps:** Click Register, enter email address, enter password, click Next  
-**Expected:** Validation shows username is already in use, user does not proceed  
-**Result:** PASS — User is taken to a page that says:
-
-> This email is already registered to a Lidl Plus account  
-> Please log in, or if you haven’t already registered with jagobouffler@gmail.com, please contact Customer Care.
-
-Buttons shown:
-- Log in
-- Contact Customer Care
-
----
-
-### Test: Log in with your phone number button works
-**Steps:** Click the Log in with your phone number button  
-**Expected:** User is taken to a phone number log in page  
-**Result:** PASS — User is taken to a page where they enter their phone number, then their password
-
----
-
-## Bugs
-No bugs to report.
+### Reviewed tests for Lidl (rewritten / reviewed by AI)
 
 ---
 
@@ -300,7 +275,46 @@ Replaces “not taken to next page” with an observable state.
 
 Everything else looks clear and testable, and no new tests were added since nothing critical is missing for this set.
 
+### Executed tests for Lidl
+
+---
+
+## Executed tests
+
+### Test: Incorrect password is entered
+**Steps:** Enter valid email, enter incorrect password  
+**Expected:** Account is not authenticated, error message displays, user remains on step  
+**Result:** PASS — User does not proceed. Validation reads:  
+> “Invalid email or password incorrect. Try again or select ‘Forgot your password?’”
+
+---
+
+### Test: Register with credentials already associated with an account
+**Steps:** Click Register, enter email address, enter password, click Next  
+**Expected:** Validation shows username is already in use, user does not proceed  
+**Result:** PASS — User is taken to a page that says:
+
+> This email is already registered to a Lidl Plus account  
+> Please log in, or if you haven’t already registered with jagobouffler@gmail.com, please contact Customer Care.
+
+Buttons shown:
+- Log in
+- Contact Customer Care
+
+---
+
+### Test: Log in with your phone number button works
+**Steps:** Click the Log in with your phone number button  
+**Expected:** User is taken to a phone number log in page  
+**Result:** PASS — User is taken to a page where they enter their phone number, then their password
+
+### Bug report for Lidl
+
+No bugs to report.
+
 ## Day 3 — [Thomann contact page](https://www.thomann.co.uk/compinfo_contact.html)
+
+### My tests for Thomann
 
 ---
 
@@ -343,6 +357,8 @@ Everything else looks clear and testable, and no new tests were added since noth
 
 3. **Test:** Enter an invalid customer number in the arrange a return call section  
    **Expected:** Format validation is shown and the user cannot proceed.
+
+### Reviewed tests for Thomann (rewritten / reviewed by AI)
 
 ---
 
@@ -393,6 +409,8 @@ Everything else looks clear and testable, and no new tests were added since noth
 3. **Enter an invalid customer number in the arrange a return call section — Acceptable**  
    **Expected:** Format validation is shown and the user cannot proceed.
 
+### Executed tests for Thomann
+
 ---
 
 ## Executed tests
@@ -412,10 +430,11 @@ Everything else looks clear and testable, and no new tests were added since noth
 **Expected:** When the user refreshes the page, any accordion sections that were closed are open again.  
 **Result:** PASS
 
----
+### Bug report for Thomann
 
-## Bugs
 No bugs to report.
+
+### Reviewed tests for Thomann
 
 ---
 
