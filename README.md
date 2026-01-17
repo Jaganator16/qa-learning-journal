@@ -31,9 +31,14 @@ The goal is to build strong fundamentals first (manual testing, test design, bug
 
 Alongside hands-on practice, I’m studying classic software testing literature and documenting my learning and exercises.
 
+- **Software Testing, An ISTQB-BCS Certified Tester Foundation guide, Third edition — Brian Hambling**
+  - Progress, chapter notes, and exercises logged in:
+    - [book-notes/beizer-software-testing-techniques/](book-notes/istqb-foundation)
+
 - **Software Testing Techniques — Boris Beizer**
   - Progress, chapter notes, and exercises logged in:
-    - `book-notes/beizer-software-testing-techniques/`
+    - [book-notes/beizer-software-testing-techniques/](book-notes/beizer-software-testing-techniques)
+
 
 ## Tools & focus areas
 - Manual testing
