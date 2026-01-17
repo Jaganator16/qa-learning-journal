@@ -5,16 +5,19 @@
   - [My tests for Yahoo](#my-tests-for-yahoo)
   - [Reviewed tests for Yahoo (rewritten / reviewed by AI)](#reviewed-tests-for-yahoo-rewritten--reviewed-by-ai)
   - [Executed tests for Yahoo](#executed-tests-for-yahoo)
+  - [Reviewed tests for Yahoo](#reviewed-tests-for-yahoo)
   - [Bug report for Yahoo](#bug-report-for-yahoo)
 - [Day 2 — Lidl login page](#day-2--lidl-login-page)
   - [My tests for Lidl](#my-tests-for-lidl)
   - [Reviewed tests for Lidl (rewritten / reviewed by AI)](#reviewed-tests-for-lidl-rewritten--reviewed-by-ai)
   - [Executed tests for Lidl](#executed-tests-for-lidl)
+  - [Reviewed tests for Lidl](#reviewed-tests-for-lidl)
   - [Bug report for Lidl](#bug-report-for-lidl)
 - [Day 3 — Thomann contact page](#day-3--thomann-contact-page)
   - [My tests for Thomann](#my-tests-for-thomann)
   - [Reviewed tests for Thomann (rewritten / reviewed by AI)](#reviewed-tests-for-thomann-rewritten--reviewed-by-ai)
   - [Executed tests for Thomann](#executed-tests-for-thomann)
+  - [Reviewed tests for Thomann](#reviewed-tests-for-thomann)
   - [Bug report for Thomann](#bug-report-for-thomann)
 
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
@@ -56,7 +59,6 @@ Expected: The password box to be cleared with a message appearing above in red s
 
 Test 10: Create a new account with already used credentials  
 Expected: After entering details and clicking create account, red text appears above the create account button and the username box saying "Account already in use" with a button for sign in and possibly forgotten password appearing
-
 
 ### Reviewed tests for Yahoo (rewritten / reviewed by AI)
 
@@ -116,6 +118,10 @@ Notes: Message shown: “Sorry, we don’t recognise this email address.”
 #### Test: Enter invalid username/email format (e.g., `john@`)
 Result: PASS (behaviour observed)  
 Notes: Message shown: “Sorry, we don’t recognise this email address.”
+
+### Reviewed tests for Yahoo
+
+No reviewed tests.
 
 ### Bug report for Yahoo
 
@@ -308,6 +314,10 @@ Buttons shown:
 **Expected:** User is taken to a phone number log in page  
 **Result:** PASS — User is taken to a page where they enter their phone number, then their password
 
+### Reviewed tests for Lidl
+
+No reviewed tests.
+
 ### Bug report for Lidl
 
 No bugs to report.
@@ -430,10 +440,6 @@ No bugs to report.
 **Expected:** When the user refreshes the page, any accordion sections that were closed are open again.  
 **Result:** PASS
 
-### Bug report for Thomann
-
-No bugs to report.
-
 ### Reviewed tests for Thomann
 
 ---
@@ -450,3 +456,7 @@ Change the user’s system time settings, return to the page, and refresh.
 
 **Why:**  
 The test intent is to verify that the sign does not rely on the user’s system time. Matching the opening hours risks contradicting that intent and makes the test harder to reason about.
+
+### Bug report for Thomann
+
+No bugs to report.
