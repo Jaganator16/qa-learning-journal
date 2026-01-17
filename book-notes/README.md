@@ -6,13 +6,15 @@ The focus is on understanding concepts over time rather than producing polished 
 
 ## Structure
 
-- **`istqb-foundation/`**  
-  Notes and reading logs for the ISTQB Foundation syllabus.
-  - `chapter-notes/` — Reflections and notes per chapter or section  
-  - `reading-log.md` — Simple log of reading progress and key takeaways
+- **istqb-foundation/**
+  Notes and progress for the ISTQB Foundation syllabus.
+  - `chapter-notes/` — Notes and reflections per chapter or section
+  - `reading-log.md` — Reading progress and key takeaways
 
-- **`beizer-software-testing-techniques/`**  
-  Notes related to *Software Testing Techniques* by Boris Beizer (added as reading progresses).
+- **beizer-software-testing-techniques/**
+  Notes related to *Software Testing Techniques* by Boris Beizer.
+  - `chapter-notes/` — Chapter-based notes and reflections
+  - `reading-log.md` — Reading progress and observations
 
 ## How I use these notes
 
