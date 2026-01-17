@@ -11,6 +11,11 @@
   - [Executed tests](#executed-tests-1)
   - [Bugs](#bugs)
   - [Items that need rewriting](#items-that-need-rewriting)
+- [Day 3 — Thomann contact page](#day-3--thomann-contact-page)
+  - [Test ideas](#test-ideas-2)
+  - [Review notes (rewritten / reviewed by AI)](#review-notes-rewritten--reviewed-by-ai)
+  - [Executed tests](#executed-tests-2)
+  - [Review: step rewrite rationale](#review-step-rewrite-rationale)  
   
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
@@ -294,3 +299,130 @@ PASS — Login did not proceed; error message displayed and user remained on the
 Replaces “not taken to next page” with an observable state.
 
 Everything else looks clear and testable, and no new tests were added since nothing critical is missing for this set.
+
+## Day 3 — [Thomann contact page](https://www.thomann.co.uk/compinfo_contact.html)
+
+---
+
+## Test ideas
+
+### Positive
+
+1. **Test:** Accordion control toggles sections  
+   **Expected:** Clicking on the header for each section of the accordion closes and reopens that section.
+
+2. **Test:** Log in button leads to log in page  
+   **Expected:** The user is taken to a log in page after clicking the log in button.
+
+3. **Test:** Normally open accordion is open after refresh  
+   **Expected:** When the user refreshes the page, any sections of the accordion that were closed should reopen.
+
+4. **Test:** “Closed” sign updates during the companies opening hours  
+   **Expected:** During the closed hours, the sign says “Closed”; during the opening hours listed in the section, the sign will say “Open”.
+
+5. **Test:** Selecting product categories updates photos, numbers and emails  
+   **Steps:** User clicks on the category, a dropdown appears, the user selects a different category.  
+   **Expected:** The user sees different photos of that category’s specialists, with their phone number and email.
+
+6. **Test:** Email links lead to mailto:  
+   **Expected:** The user clicks on an email link and is lead to their default service in a compose mail box with the “To” section filled.
+
+7. **Test:** Specialist department links lead to individual page  
+   **Expected:** The user clicks on a specialist department link (e.g. Drums) and is taken to a page specific to that department.
+
+8. **Test:** Entering a valid phone number in the arrange a return call section  
+   **Expected:** Upon entering a valid phone number according to the region chosen, the state of the greyed out “Book” button changes and can be clicked.
+
+### Negative
+
+1. **Test:** State of Open/Closed sign after changing system time settings  
+   **Expected:** The sign does not rely on the user’s time settings and remains the same.
+
+2. **Test:** Invalid telephone number is entered in arrange a return call  
+   **Expected:** Format validation is shown and the “Book” button remains greyed out.
+
+3. **Test:** Enter an invalid customer number in the arrange a return call section  
+   **Expected:** Format validation is shown and the user cannot proceed.
+
+---
+
+## Review notes (rewritten / reviewed by AI)
+
+### Positive
+
+1. **Accordion control toggles sections — Acceptable**  
+   **Expected:** Clicking on the header for each section of the accordion closes and reopens that section.
+
+2. **Log in button leads to log in page — Acceptable**  
+   **Expected:** The user is taken to a log in page after clicking the log in button.
+
+3. **Normally open accordion is open after refresh — Needs change**  
+   **Revised expected:** When the user refreshes the page, any accordion sections that were closed are open again.  
+   **Why:** Keeps the original intent but makes the expected state explicit and directly observable.
+
+4. **“Closed” sign updates during the companies opening hours — Needs change**  
+   **Revised expected:** Outside the listed opening hours the sign shows “Closed”; during the listed opening hours it shows “Open”.  
+   **Why:** Fixes grammar and removes repetition while keeping the same behaviour.
+
+5. **Selecting product categories updates photos, numbers and emails — Needs change**  
+   **Revised steps:** Click the category, open the dropdown, select a different category.  
+   **Revised expected:** Photos and contact details (phone number and email) update to match the selected category.  
+   **Why:** Steps were unclear and the expected result is more observable without relying on examples.
+
+6. **Email links lead to mailto: — Needs change**  
+   **Revised expected:** Clicking an email link opens the default email app with a new draft and the “To” field pre-filled.  
+   **Why:** Corrects phrasing and improves observability.
+
+7. **Specialist department links lead to individual page — Acceptable**  
+   **Expected:** The user clicks on a specialist department link (e.g. Drums) and is taken to a page specific to that department.
+
+8. **Entering a valid phone number in the arrange a return call section — Needs change**  
+   **Revised expected:** Entering a valid phone number for the selected region enables the “Book” button so it can be clicked.  
+   **Why:** Makes the observable change explicit rather than relying on colour.
+
+### Negative
+
+1. **State of Open/Closed sign after changing system time settings — Needs change**  
+   **Revised expected:** Changing the user’s system time does not change the Open/Closed sign state.  
+   **Why:** Makes the assertion direct and observable.
+
+2. **Invalid telephone number is entered in arrange a return call — Needs change**  
+   **Revised expected:** Format validation is shown and the “Book” button remains disabled.  
+   **Why:** “Disabled” is more testable than colour-based assumptions.
+
+3. **Enter an invalid customer number in the arrange a return call section — Acceptable**  
+   **Expected:** Format validation is shown and the user cannot proceed.
+
+---
+
+## Executed tests
+
+### Test: State of Open/Closed sign after changing system time settings
+**Steps:** Change the user’s system time settings, return to the page, and refresh.  
+**Expected:** Changing the user’s system time does not change the Open/Closed sign state.  
+**Result:** PASS
+
+### Test: Enter an invalid customer number in the arrange a return call section
+**Steps:** Enter an invalid customer number, deselect the box.  
+**Expected:** Format validation is shown and the user cannot proceed.  
+**Result:** PASS
+
+### Test: Normally open accordion is open after refresh
+**Steps:** Close all accordion sections, refresh the page, observe the state of the accordion.  
+**Expected:** When the user refreshes the page, any accordion sections that were closed are open again.  
+**Result:** PASS
+
+---
+
+## Review: step rewrite rationale
+
+### Test: State of Open/Closed sign after changing system time settings — Needs change
+
+**Issue:**  
+The original steps included aligning the system time zone and time to match Thomann’s opening hours, introducing unnecessary complexity and weakening the assertion.
+
+**Revised steps:**  
+Change the user’s system time settings, return to the page, and refresh.
+
+**Why:**  
+The test intent is to verify that the sign does not rely on the user’s system time. Matching the opening hours risks contradicting that intent and makes the test harder to reason about.
