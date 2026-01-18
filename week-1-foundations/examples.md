@@ -19,6 +19,12 @@
   - [Executed tests for Thomann](#executed-tests-for-thomann)
   - [Reviewed tests for Thomann](#reviewed-tests-for-thomann)
   - [Bug report for Thomann](#bug-report-for-thomann)
+- [Day 4 — James Brown shop](#day-4--james-brown-shop)
+  - [My tests for James Brown](#my-tests-for-james-brown)
+  - [Reviewed tests for James Brown (rewritten / reviewed by AI)](#reviewed-tests-for-james-brown-rewritten--reviewed-by-ai)
+  - [Executed tests for James Brown](#executed-tests-for-james-brown)
+  - [Reviewed tests for James Brown](#reviewed-tests-for-james-brown)
+  - [Bug report for James Brown](#bug-report-for-james-brown)  
 
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
@@ -504,3 +510,143 @@ The test intent is to verify that the sign does not rely on the user’s system 
 ---
 
 No bugs to report.
+
+---
+
+## Day 4 — [James Brown shop](https://shop.jamesbrown.com/products/living-in-america-world-tour-t-shirt-x3ctjb067?variant=42018518401093)
+
+---
+
+## My tests for James Brown
+
+---
+
+### Positive
+
+1. **Test:** Add to cart button stores selected item in cart  
+   **Expected:** The size and quantity chosen should be stored in the cart.
+
+2. **Test:** Add another of the same item in a different size to cart  
+   **Steps:** Add an item to cart, select a different size of the same product and add it to cart.  
+   **Expected:** The items aren't stacked in the cart, kept separate.
+
+3. **Test:** Add the same item in the same size to cart  
+   **Steps:** Select a size and quantity and add to cart; select the same size and quantity and add to cart; select the same size and a different quantity and add to cart.  
+   **Expected:** The cart shows one item with the correct quantity.
+
+4. **Test:** Change the window size to stack the photo and text  
+   **Steps:** Observe scrolling behaviours, change the size of the window until the photo and text can’t fit side by side and observe the scrolling behaviours.  
+   **Expected:** The sticky photo is no longer sticky when the browser window size stacks the image and text.
+
+5. **Test:** Refreshing the page before adding to cart  
+   **Steps:** Select a size and quantity, refresh the page.  
+   **Expected:** The session is stored, size and quantity are still selected.
+
+6. **Test:** Remove all items from cart  
+   **Steps:** Add items to cart, click on the cart and remove them all.  
+   **Expected:** Validation appears with indication that the cart is empty.
+
+7. **Test:** Log in button leads to a log in page  
+   **Expected:** The user is taken to a log in page after clicking the log in button.
+
+### Negative
+
+1. **Test:** Entering an invalid email to the newsletter  
+   **Expected:** Validation appears and the user does not proceed.
+
+2. **Test:** Add an undeliverable quantity to cart  
+   **Steps:** Select a quantity of an item that is more items than what is available and click add to cart.  
+   **Expected:** Validation appears and the user cannot proceed.
+
+3. **Test:** Leave the email field empty in the newsletter sign up  
+   **Expected:** Validation appears to enter an email and the user cannot proceed.
+
+---
+
+## Reviewed tests for James Brown (rewritten / reviewed by AI)
+
+---
+
+### Positive
+
+1. **Add to cart button stores selected item in cart — Needs change**  
+   **Revised expected:** The selected size and quantity appear in the cart.  
+   **Why:** “Stored” is abstract; showing the item in the cart is the observable outcome.
+
+2. **Add another of the same item in a different size to cart — Needs change**  
+   **Revised steps:** Add an item to the cart, select a different size of the same product, and add it to the cart.  
+   **Revised expected:** The cart displays separate line items for each size.  
+   **Why:** Fixes a typo and replaces “aren’t stacked” with a clear, observable cart state.
+
+3. **Add the same item in the same size to cart — Needs change**  
+   **Revised steps:** Add the item with a selected size and quantity; add the same size again; add the same size with a different quantity.  
+   **Revised expected:** The cart shows a single line item for that size with the combined correct quantity.  
+   **Why:** Clarifies quantity behaviour and removes repetition.
+
+4. **Change the window size to stack the photo and text — Needs change**  
+   **Revised steps:** Resize the browser window until the product image and text stack vertically.  
+   **Revised expected:** When stacked, the product image is no longer sticky during scrolling.  
+   **Why:** Focuses on the layout condition that triggers the behaviour.
+
+5. **Refreshing the page before adding to cart — Needs change**  
+   **Revised expected:** After refresh, the previously selected size and quantity remain selected.  
+   **Why:** Removes internal assumptions and states the observable outcome.
+
+6. **Remove all items from cart — Needs change**  
+   **Revised expected:** The cart displays an empty state indicating no items are present.  
+   **Why:** This is an empty-state message, not validation.
+
+7. **Log in button leads to a log in page — Acceptable**  
+   **Expected:** The user is taken to a log in page after clicking the log in button.
+
+### Negative
+
+1. **Entering an invalid email to the newsletter — Needs change**  
+   **Revised expected:** An error message is shown for the email field and submission does not proceed.  
+   **Why:** Specifies location and blocked behaviour.
+
+2. **Add an undeliverable quantity to cart — Needs change**  
+   **Revised expected:** An error message is shown indicating insufficient availability and the item is not added to the cart.  
+   **Why:** Ties validation to cart behaviour.
+
+3. **Leave the email field empty in the newsletter sign up — Acceptable**  
+   **Expected:** Validation appears to enter an email and the user cannot proceed.
+
+---
+
+## Executed tests for James Brown
+
+---
+
+### Test: Change the window size to stack the photo and text  
+**Steps:** Resize the browser window until the product image and text stack vertically.  
+**Expected:** When stacked, the product image is no longer sticky during scrolling.  
+**Result:** PASS
+
+### Test: Entering an invalid email to the newsletter  
+**Steps:** Enter an invalid email format in the newsletter field and submit.  
+**Expected:** An error message is shown for the email field and submission does not proceed.  
+**Result:** PASS
+
+### Test: Log in button leads to a log in page  
+**Steps:** Click log in.  
+**Expected:** The user is taken to a log in page after clicking the log in button.  
+**Result:** PASS
+
+---
+
+## Reviewed tests for James Brown
+
+---
+
+No reviewed tests.
+
+---
+
+## Bug report for James Brown
+
+---
+
+No bugs to report.
+
+---
