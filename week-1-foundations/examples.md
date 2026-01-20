@@ -25,6 +25,12 @@
   - [Executed tests for James Brown](#executed-tests-for-james-brown)
   - [Reviewed tests for James Brown](#reviewed-tests-for-james-brown)
   - [Bug report for James Brown](#bug-report-for-james-brown)  
+- [Day 5 — Hub - St Ives](#day-5--hub---st-ives)
+  - [My tests for Hub - St Ives](#my-tests-for-hub---st-ives)
+  - [Bug report for Hub - St Ives](#bug-report-for-hub---st-ives)
+
+
+---
 
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
@@ -650,3 +656,109 @@ No reviewed tests.
 No bugs to report.
 
 ---
+
+## Table of contents
+- [Day 1 — Yahoo login page](#day-1--yahoo-login-page)
+- [Day 2 — Lidl login page](#day-2---lidl-login-page)
+- [Day 3 — Thomann contact page](#day-3--thomann-contact-page)
+- [Day 4 — James Brown shop](#day-4---james-brown-shop)
+- [Day 5 — Hub - St Ives](#day-5---hub---st-ives)
+
+---
+
+## Day 5 — [Hub - St Ives](https://hubbox.co.uk/location/st-ives-hub/)
+
+---
+## My tests for Hub - St Ives
+---
+
+### Positive
+
+1. **Clicking “Tomorrow” on booking form**  
+   **Expected:** The date after today is selected  
+   **Result:** PASS
+
+2. **Make a booking with fake, unverified credentials**  
+   **Change:** Make a booking and verify credentials  
+   **Expected:** A verification email or text must be completed before making the booking  
+
+   **Rewritten expected:** Booking cannot be completed until the user verifies their email address or phone number.  
+   **Why:** “Must be completed” is vague; this clarifies the blocking condition and observable behaviour.  
+
+   **Result:** FAIL  
+   **Actual:** No verification is needed  
+   **Risk note:** The fault could be used maliciously  
+   **Evidence:** [link to screenshots]
+
+3. **Click “Get directions”**  
+   **Expected:** The user is taken to a maps website with a pin on the restaurant  
+   **Result:** PASS
+
+4. **Click “Follow us” Instagram button in footer**  
+   **Steps:** Scroll to the bottom of the page, click the “Follow us” Instagram button  
+   **Expected:** The user is taken to the Instagram page for the St Ives branch  
+   **Result:** FAIL  
+   **Actual:** The link leads to the main company Instagram
+
+5. **Click “Follow us” Facebook button in footer**  
+   **Steps:** Scroll to the bottom of the page, click the “Follow us” Facebook button  
+   **Expected:** The user is taken to the Facebook page for the St Ives branch  
+   **Result:** FAIL  
+   **Actual:** The link leads to a different branch’s Facebook  
+   **Rewritten actual:** The link leads to the Truro branch Facebook  
+   **Why:** Clears vagueness
+
+### Learning points
+
+- **Expected results should state a blocking condition when testing enforcement**  
+  When testing verification or security, expectations should clearly state what action is prevented until a condition is met.
+
+---
+## Bug report for Hub - St Ives
+---
+
+### Environment
+Chrome, macOS Sequoia 15.5
+
+### Booking can be completed without the user verifying their email or phone number
+**Steps:**  
+Select a date and time on the booking form, enter ~~fake~~ credentials, and click “Book now”
+
+**Expected:**  
+Booking cannot be completed until the user verifies their email address or phone number.
+
+**Actual:**  
+No verification is needed.
+
+**Evidence:**  
+[booking-hub-1.png](screenshots/booking-hub-1.png)  
+[booking-hub-2.png](screenshots/booking-hub-2.png)
+
+### Footer links for Instagram on the St Ives page point to the company account
+**Steps:**  
+Scroll to the bottom of the page, click the “Follow us” Instagram button
+
+**Expected:**  
+The user is taken to the Instagram page for the St Ives branch.
+
+**Actual:**  
+The link leads to the main company Instagram.
+
+**Evidence:**  
+[hub-footer-ig.png](screenshots/hub-footer-ig.png)
+
+### Footer links for Facebook on the St Ives page point to the Truro branch Facebook page
+**Steps:**  
+Scroll to the bottom of the page, click the “Follow us” Facebook button
+
+**Expected:**  
+The user is taken to the Facebook page for the St Ives branch.
+
+**Actual:**  
+The link leads to the Truro branch Facebook.
+
+**Evidence:**  
+[hub-footer-fb.png](screenshots/hub-footer-fb.png)
+
+---
+
