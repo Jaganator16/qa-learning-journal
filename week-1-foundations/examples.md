@@ -657,22 +657,12 @@ No bugs to report.
 
 ---
 
-## Table of contents
-- [Day 1 — Yahoo login page](#day-1--yahoo-login-page)
-- [Day 2 — Lidl login page](#day-2---lidl-login-page)
-- [Day 3 — Thomann contact page](#day-3--thomann-contact-page)
-- [Day 4 — James Brown shop](#day-4---james-brown-shop)
-- [Day 5 — Hub - St Ives](#day-5---hub---st-ives)
-
----
-
 ## Day 5 — [Hub - St Ives](https://hubbox.co.uk/location/st-ives-hub/)
 
 ---
 ## My tests for Hub - St Ives
 ---
 
-### Positive
 
 1. **Clicking “Tomorrow” on booking form**  
    **Expected:** The date after today is selected  
