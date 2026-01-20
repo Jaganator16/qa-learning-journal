@@ -26,3 +26,9 @@
 
 **Tie-in to what I learned today (1 short takeaway):**  
 Testing is about reducing risk and improving decision-making under constraints (time, money, quality), not proving software is error-free.
+
+---
+
+- **Tuesday, 20 January 2026 — 17:54–18:27**  
+  Begun Chapter 2 (pp. 37–41) — Self assessment; software development models; case studies.
+
