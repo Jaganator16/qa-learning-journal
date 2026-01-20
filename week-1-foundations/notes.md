@@ -10,6 +10,10 @@
   - [What I learned in day 3](#what-i-learned-in-day-3)
 - [Day 4 - James Brown shop](#day-4---james-brown-shop)
   - [What I learned in day 4](#what-i-learned-in-day-4)
+- [Day 5 - Hub - St Ives](#day-5---hub---st-ives)
+  - [What I learned in day 5](#what-i-learned-in-day-5)
+  
+---
 
 ## Day 1 - [Yahoo login page](https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-GB&.intl=uk&.done=https%3A%2F%2Fuk.mail.yahoo.com%2Fd%2Flogin)
 
@@ -27,6 +31,8 @@
 - Expected would usually differ:
   - Empty: “Enter your email/username”
   - Invalid format: “Enter a valid email address”
+
+---
 
 ## Day 2 - [Lidl login page](https://accounts.lidl.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fcountry_code%3DGB%26response_type%3Dcode%26client_id%3Dgreatbritainretailclient%26scope%3Dopenid%2520profile%2520Lidl.Authentication%2520offline_access%26state%3DFFVZM63x2SMloHHWpLTH0hxg8kFHXuKfuiDHuDS0Kvs%253D%26redirect_uri%3Dhttps%253A%252F%252Fwww.lidl.co.uk%252Fuser-api%252Fsignin-oidc%26nonce%3DdhYeqjREegv9rzcMhR_EF64LIS9rqTibZJ_lf3RRJSA%26step%3Dlogin%26language%3Den-GB#login)
 
@@ -46,6 +52,8 @@
 
 5. **Small wording changes can significantly improve test strength**  
    Minor adjustments—removing ambiguity, tightening scope, or clarifying outcomes—can materially improve test quality without requiring a full rewrite.
+
+---
 
 ## Day 3 - [Thomann contact page](https://www.thomann.co.uk/compinfo_contact.html)
 
@@ -78,3 +86,17 @@
 
 3. **Keep terminology consistent within a test**  
    Inconsistent terms (e.g. “news letter” vs “newsletter”) can introduce uncertainty. Using one consistent label throughout improves clarity and reduces interpretation errors.
+
+---
+
+ ## Day 5 - Hub - St Ives
+
+### What I learned in day 5
+
+- Test failures are not automatically bugs; they often need validation before being promoted.
+- Bug reports should focus on observable behaviour, not assumptions or intent.
+- Removing irrelevant detail (e.g. “fake” data) improves clarity and reproducibility.
+- Clear expected vs actual behaviour is more important than perfect certainty.
+- Writing assumed bugs is still valuable practice for structure and precision.
+- **Expected results should state a blocking condition when testing enforcement**  
+  When testing verification or security, expectations should clearly state what action is prevented until a condition is met.  
