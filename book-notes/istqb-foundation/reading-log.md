@@ -20,7 +20,7 @@
   Chapter 1 (pp. 20–27) — Fundamental test process; agile and the fundamental test process; check of understanding; psychology of testing; check of understanding.
 
 - **Sunday, 18 January 2026 — 21:36–22:28**  
-  Chapter 1 (pp. 27–36) — Code of ethics; check of understanding; summary; example examination questions.
+  Finished Chapter 1 (pp. 27–36) — Code of ethics; check of understanding; summary; example examination questions.
 
 ---
 
