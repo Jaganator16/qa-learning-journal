@@ -678,7 +678,6 @@ No bugs to report.
    **Result:** FAIL  
    **Actual:** No verification is needed  
    **Risk note:** The fault could be used maliciously  
-   **Evidence:** [link to screenshots]
 
 3. **Click “Get directions”**  
    **Expected:** The user is taken to a maps website with a pin on the restaurant  
@@ -706,6 +705,10 @@ No bugs to report.
 ---
 ## Bug report for Hub - St Ives
 ---
+
+> No bugs are formally reported because, without access to defined requirements, failed tests cannot be conclusively classified as defects. This highlights a key limitation of these exercises: most issues observed are better described as UX concerns or product questions rather than clear bugs.
+
+> For learning purposes, these observations are still documented as bug reports to practise defect reporting and analysis.
 
 ### Environment
 Chrome, macOS Sequoia 15.5
