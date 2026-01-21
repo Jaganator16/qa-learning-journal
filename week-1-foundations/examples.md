@@ -707,7 +707,6 @@ No bugs to report.
 ---
 
 > No bugs are formally reported because, without access to defined requirements, failed tests cannot be conclusively classified as defects. This highlights a key limitation of these exercises: most issues observed are better described as UX concerns or product questions rather than clear bugs.
-
 > For learning purposes, these observations are still documented as bug reports to practise defect reporting and analysis.
 
 ### Environment
